@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mundial Tipovačka 2026</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="config.js"></script>
+  <script defer src="data.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="eyebrow">FIFA World Cup 2026</div>
+      <h1>⚽ Mundial Tipovačka 2026 ⚽</h1>
+      <div class="subtitle" id="subtitle">Dnes:</div>
+      <div id="leaderBoxHeader"></div>
+      <div class="header-actions">
+        <button class="cta" id="loginButton">Přihlásit se</button>
+        <button class="cta" id="predictionsButton">Predikce</button>
+        <button class="cta ghost" id="adminButton">Výsledky</button>
+        <button class="cta ghost" id="exportButton">Export dat</button>
+        <label class="cta ghost import-label">Import dat<input id="importFile" type="file" accept="application/json,.json" hidden /></label>
+      </div>
+      <div id="userBadge"></div>
+    </header>
+
+    <main>
+      <div class="top-section">
+        <section id="matches" class="panel left">
+          <h2>⚽ Zápasy</h2>
+          <div id="matchesList"></div>
+        </section>
+
+        <section id="table" class="panel right">
+          <h2>🏆 Tabulka</h2>
+          <table id="rankingTable"></table>
+          <div class="scoring-note" id="scoringNote"></div>
+        </section>
+      </div>
+
+      <section id="history" class="panel">
+        <h2>📅 Historie zápasů</h2>
+        <div id="dayFilter" class="day-filter"></div>
+        <div id="historyList"></div>
+      </section>
+
+      <section id="groupsSection" class="panel">
+        <h2>📊 Skupiny</h2>
+        <div id="groupsList"></div>
+      </section>
+
+      <section id="predictions" class="panel">
+        <h2>🔮 Predikce turnaje</h2>
+        <div id="predictionsList"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-line"></div>
+      <div class="footer-text">© 2026 Tipovačka. Excel byl obětován. Web přežil.</div>
+    </footer>
+  </div>
+
+  <div id="matchModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header rowed">
+        <div id="modalTitle"></div>
+        <button class="icon-button" id="closeMatchModal">✕</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="loginModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content login-card">
+      <div class="modal-header rowed">
+        <h2>Přihlášení</h2>
+        <button class="icon-button" id="closeLoginModal">✕</button>
+      </div>
+      <p class="login-subtitle">Zadej jméno a PIN pro vstup do tipovačky.</p>
+      <div class="login-form">
+        <input type="text" id="loginName" list="playersList" placeholder="Jméno" autocomplete="username" />
+        <datalist id="playersList"></datalist>
+        <input type="password" id="loginPin" placeholder="PIN" autocomplete="current-password" />
+        <button class="login-btn" id="loginSubmit">Přihlásit se</button>
+      </div>
+      <div class="help-text">Defaultní PINy jsou v <code>data.js</code>. Ano, statická stránka nemá bankovní zabezpečení, šokující.</div>
+    </div>
+  </div>
+
+  <div id="predictionsModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content wide">
+      <div class="modal-header rowed">
+        <h2>Turnajové predikce</h2>
+        <button class="icon-button" id="closePredictionsModal">✕</button>
+      </div>
+      <div id="predictionsModalBody"></div>
+    </div>
+  </div>
+
+  <div id="adminModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content wide">
+      <div class="modal-header rowed">
+        <h2>Výsledky a realita</h2>
+        <button class="icon-button" id="closeAdminModal">✕</button>
+      </div>
+      <div id="adminModalBody"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+</body>
+</html>
