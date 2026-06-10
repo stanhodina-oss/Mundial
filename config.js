@@ -1,13 +1,9 @@
 window.TIPOVACKA_CONFIG = {
-  // local = data stays in the browser and can be exported/imported as JSON.
-  // google = read/write data from Google Sheets using OpenSheet + Apps Script.
-  mode: "local",
+window.TIPOVACKA_CONFIG = {
+  mode: "google",
 
-  // Example for google mode:
-  // sheetUrl: "https://opensheet.elk.sh/YOUR_GOOGLE_SHEET_ID",
-  // scriptUrl: "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec",
-  sheetUrl: "",
-  scriptUrl: "",
+  sheetUrl: "https://opensheet.elk.sh/1Ic_pOvVKLXVgtnrOKmJjbCdDy2JrlOUXW7qcuLZxykE",
+  scriptUrl: "https://script.google.com/u/0/home/projects/1KDKZA0IocCePvtWgO0dyNhEXIyk2QWD8-BvWrarkX-n-bMvbfj09gV4t/edit",
 
   refreshMs: 15000
 };
