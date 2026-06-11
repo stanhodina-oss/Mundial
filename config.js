@@ -1,5 +1,4 @@
 window.TIPOVACKA_CONFIG = {
-window.TIPOVACKA_CONFIG = {
   mode: "google",
 
   sheetUrl: "https://opensheet.elk.sh/1Ic_pOvVKLXVgtnrOKmJjbCdDy2JrlOUXW7qcuLZxykE",
